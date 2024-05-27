@@ -20,6 +20,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      react-router-dom:
+        specifier: ^6.23.1
+        version: registry.npmjs.org/react-router-dom@6.23.1(react-dom@18.3.1)(react@18.3.1)
     devDependencies:
       '@types/react':
         specifier: ^18.2.66
@@ -3768,6 +3771,13 @@ packages:
     dependencies:
       '@prisma/debug': registry.npmjs.org/@prisma/debug@5.14.0
 
+  registry.npmjs.org/@remix-run/router@1.16.1:
+    resolution: {integrity: sha512-es2g3dq6Nb07iFxGk5GuHN20RwBZOsuDQN7izWIisUcv9r+d2C5jQxqmgkdebXgReWfiyUabcki6Fg77mSNrig==, tarball: https://registry.npmjs.org/@remix-run/router/-/router-1.16.1.tgz}
+    name: '@remix-run/router'
+    version: 1.16.1
+    engines: {node: '>=14.0.0'}
+    dev: false
+
   registry.npmjs.org/@rollup/rollup-android-arm-eabi@4.18.0:
     resolution: {integrity: sha512-Tya6xypR10giZV1XzxmH5wr25VcZSncG0pZIjfePT0OVBvqNEurzValetGNarVrGiq66EBVAFn15iYX4w6FKgQ==, tarball: https://registry.npmjs.org/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.18.0.tgz}
     name: '@rollup/rollup-android-arm-eabi'
@@ -5873,7 +5883,7 @@ packages:
     version: 7.0.4
     dependencies:
       string-width: registry.npmjs.org/string-width@4.2.3
-      strip-ansi: 6.0.1
+      strip-ansi: registry.npmjs.org/strip-ansi@6.0.1
       wrap-ansi: registry.npmjs.org/wrap-ansi@7.0.0
     dev: true
 
@@ -11630,6 +11640,35 @@ packages:
     name: react-is
     version: 18.3.1
     dev: true
+
+  registry.npmjs.org/react-router-dom@6.23.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-utP+K+aSTtEdbWpC+4gxhdlPFwuEfDKq8ZrPFU65bbRJY+l706qjR7yaidBpo3MSeA/fzwbXWbKBI6ftOnP3OQ==, tarball: https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.23.1.tgz}
+    id: registry.npmjs.org/react-router-dom/6.23.1
+    name: react-router-dom
+    version: 6.23.1
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': registry.npmjs.org/@remix-run/router@1.16.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-router: registry.npmjs.org/react-router@6.23.1(react@18.3.1)
+    dev: false
+
+  registry.npmjs.org/react-router@6.23.1(react@18.3.1):
+    resolution: {integrity: sha512-fzcOaRF69uvqbbM7OhvQyBTFDVrrGlsFdS3AL+1KfIBtGETibHzi3FkoTRyiDJnWNc2VxrfvR+657ROHjaNjqQ==, tarball: https://registry.npmjs.org/react-router/-/react-router-6.23.1.tgz}
+    id: registry.npmjs.org/react-router/6.23.1
+    name: react-router
+    version: 6.23.1
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': registry.npmjs.org/@remix-run/router@1.16.1
+      react: 18.3.1
+    dev: false
 
   registry.npmjs.org/react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==, tarball: https://registry.npmjs.org/react/-/react-18.3.1.tgz}
