@@ -1,6 +1,9 @@
 import { httpClient } from '@/utils/request'
-import { OneYanType } from './type'
+import { UserData } from './type'
 
 export const userApi = {
-  oneYan: httpClient.get<OneYanType>('/api')
+  signup: async (data: UserData) => {
+    const res = await httpClient.post<UserData>('/user/signup', data)
+    return res
+  }
 }

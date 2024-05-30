@@ -1,4 +1,4 @@
-export interface OneYanType {
-  code: number
-  message: string
+export interface UserData {
+  name?: string
+  email: string
 }
