@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "nest start --watch",
     "build": "nest build",
-    "vercel-build": "npx prisma db pull && npx prisma generate && nest build && node dist/main",
+    "vercel-build": "npx prisma db pull && npx prisma generate && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
