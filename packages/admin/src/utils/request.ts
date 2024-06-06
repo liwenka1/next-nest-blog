@@ -87,6 +87,14 @@ class Request {
   post<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
     return this.instance.post(url, data, config)
   }
+
+  put<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
+    return this.instance.put(url, data, config)
+  }
+
+  delete<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+    return this.instance.delete(url, config)
+  }
 }
 
 export const httpClient = new Request({

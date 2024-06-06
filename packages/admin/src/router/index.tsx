@@ -8,6 +8,10 @@ import { VITE_BASE_URL } from '@/config/env'
 
 const routes: RouteObject[] = [
   {
+    path: '/login',
+    element: lazyLoad(lazy(() => import('@/pages/login')))
+  },
+  {
     path: '/',
     element: <BasicLayout />,
     children: [
