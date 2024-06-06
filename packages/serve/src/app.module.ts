@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module'
 import { PostModule } from './post/post.module'
 import { TransformInterceptor } from './config/transform.interceptor'
 import { ErrorsInterceptor } from './config/errors.interceptor'
+import { PrismaService } from './prisma/prisma.service'
 
 @Module({
   imports: [UserModule, PostModule],
@@ -20,7 +21,8 @@ import { ErrorsInterceptor } from './config/errors.interceptor'
       provide: APP_INTERCEPTOR,
       useClass: ErrorsInterceptor
     },
-    AppService
+    AppService,
+    PrismaService
   ]
 })
 export class AppModule {}
