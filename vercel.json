@@ -1,0 +1,15 @@
+{
+	"builds": [
+		{
+			"src": "packages/server/main.ts",
+			"use": "@vercel/node"
+		}
+	],
+	"routes": [
+		{
+			"src": "/(.*)",
+			"dest": "packages/server/src/main.ts",
+			"methods": ["GET", "POST", "PUT", "DELETE"]
+		}
+	]
+}
