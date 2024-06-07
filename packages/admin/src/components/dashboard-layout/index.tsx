@@ -20,7 +20,7 @@ const items: MenuProps['items'] = [
   label: nav.label
 }))
 
-const BasicLayout = () => {
+const DashboardLayout = () => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
 
@@ -57,4 +57,4 @@ const BasicLayout = () => {
   )
 }
 
-export default BasicLayout
+export default DashboardLayout

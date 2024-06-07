@@ -1,4 +1,4 @@
-import BasicLayout from './basic-layout'
+import DashboardLayout from './dashboard-layout'
 import ProgressBarWrapper from './progress-bar-wrapper'
 
-export { BasicLayout, ProgressBarWrapper }
+export { DashboardLayout, ProgressBarWrapper }

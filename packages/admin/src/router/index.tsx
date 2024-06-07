@@ -3,10 +3,19 @@ import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom'
 import type { RouteObject } from 'react-router-dom'
 
 import lazyLoad from './lazyLoad'
-import { BasicLayout, ProgressBarWrapper } from '@/components'
+import { DashboardLayout, ProgressBarWrapper } from '@/components'
 import { VITE_BASE_URL } from '@/config/env'
 
 const routes: RouteObject[] = [
+  {
+    path: '/',
+    children: [
+      {
+        index: true,
+        element: <Navigate to="/auth" replace />
+      }
+    ]
+  },
   {
     path: 'auth',
     element: (
@@ -37,7 +46,7 @@ const routes: RouteObject[] = [
     path: 'dashboard',
     element: (
       <ProgressBarWrapper>
-        <BasicLayout />
+        <DashboardLayout />
       </ProgressBarWrapper>
     ),
     children: [
