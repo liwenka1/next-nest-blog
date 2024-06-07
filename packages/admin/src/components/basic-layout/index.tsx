@@ -8,11 +8,11 @@ const { Header, Sider, Content } = Layout
 const items: MenuProps['items'] = [
   {
     label: 'home',
-    path: '/home'
+    path: '/dashboard/home'
   },
   {
     label: 'about',
-    path: '/about'
+    path: '/dashboard/about'
   }
 ].map((nav) => ({
   key: nav.path,

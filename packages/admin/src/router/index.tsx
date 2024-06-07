@@ -1,23 +1,49 @@
 import { lazy } from 'react'
-import { createBrowserRouter, Navigate } from 'react-router-dom'
+import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom'
 import type { RouteObject } from 'react-router-dom'
 
 import lazyLoad from './lazyLoad'
-import { BasicLayout } from '@/components'
+import { BasicLayout, ProgressBarWrapper } from '@/components'
 import { VITE_BASE_URL } from '@/config/env'
 
 const routes: RouteObject[] = [
   {
-    path: '/login',
-    element: lazyLoad(lazy(() => import('@/pages/login')))
-  },
-  {
-    path: '/',
-    element: <BasicLayout />,
+    path: 'auth',
+    element: (
+      <ProgressBarWrapper>
+        <Outlet />
+      </ProgressBarWrapper>
+    ),
     children: [
       {
         index: true,
-        element: <Navigate to="/home" replace />
+        element: <Navigate to="/auth/login" replace />
+      },
+      {
+        path: 'login',
+        element: lazyLoad(lazy(() => import('@/pages/login')))
+      },
+      {
+        path: 'register',
+        element: lazyLoad(lazy(() => import('@/pages/register')))
+      },
+      {
+        path: 'forgot-password',
+        element: lazyLoad(lazy(() => import('@/pages/forgot-password')))
+      }
+    ]
+  },
+  {
+    path: 'dashboard',
+    element: (
+      <ProgressBarWrapper>
+        <BasicLayout />
+      </ProgressBarWrapper>
+    ),
+    children: [
+      {
+        index: true,
+        element: <Navigate to="/dashboard/home" replace />
       },
       {
         path: 'home',
