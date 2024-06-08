@@ -1,5 +1,8 @@
 import { Alert, Button, Form, Input } from 'antd'
 import type { FormProps } from 'antd'
+import clsx from 'clsx'
+
+import AuthLockSvg from '@/assets/auth-lock.svg'
 
 interface AuthFormProps {
   type: 'LOGIN' | 'REGISTER' | 'FORTPASSWORD'
@@ -26,16 +29,34 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-[480px] flex-col p-20 px-[64px] pt-[160px]">
-      <div className="mb-[40px] flex flex-col gap-[16px]">
-        <h4 className="text-2xl">{type === 'LOGIN' ? 'Sign in to VVenKai' : 'Get started absolutely free'}</h4>
-        <div className="flex flex-row gap-[4px] text-sm">
-          <p>{type === 'LOGIN' ? 'New user?' : 'Already have an account?'}</p>
-          <a className="text-[#00b96b] hover:underline" href={type === 'LOGIN' ? '/auth/register' : '/auth/login'}>
-            {type === 'LOGIN' ? 'Create an account' : 'Sign in'}
-          </a>
+    <div
+      className={clsx(
+        'mx-auto flex w-full flex-col',
+        type !== 'FORTPASSWORD'
+          ? 'max-w-[480px] px-[64px] pt-[160px]'
+          : 'max-w-[400px] justify-center pb-[96px] pt-[96px]'
+      )}
+    >
+      <img className="h-[96px]" src={AuthLockSvg} alt="" />
+      {type !== 'FORTPASSWORD' ? (
+        <div className="mb-[40px] flex flex-col gap-[16px]">
+          <h4 className="text-2xl">{type === 'LOGIN' ? 'Sign in to VVenKai' : 'Get started absolutely free'}</h4>
+          <div className="flex flex-row gap-[4px] text-sm">
+            <p>{type === 'LOGIN' ? 'New user?' : 'Already have an account?'}</p>
+            <a className="text-[#00b96b] hover:underline" href={type === 'LOGIN' ? '/auth/register' : '/auth/login'}>
+              {type === 'LOGIN' ? 'Create an account' : 'Sign in'}
+            </a>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="mb-[40px] mt-[24px] flex flex-col items-center justify-center gap-[8px] text-center">
+          <h3 className="text-3xl">Forgot your password?</h3>
+          <p className="text-sm font-[400] text-gray-400">
+            Please enter the email address associated with your account and We will email you a link to reset your
+            password.
+          </p>
+        </div>
+      )}
       {type === 'LOGIN' && (
         <Alert
           className="mb-[24px]"
@@ -75,6 +96,11 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
             <span className="underline">Terms of Service</span>
             &nbsp;and&nbsp;
             <span className="underline">Privacy Policy</span>.
+          </Form.Item>
+        )}
+        {type === 'FORTPASSWORD' && (
+          <Form.Item className="flex cursor-pointer items-center justify-center hover:underline">
+            <a href="/auth/login">Return to sign in</a>
           </Form.Item>
         )}
       </Form>
