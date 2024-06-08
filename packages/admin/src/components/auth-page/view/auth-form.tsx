@@ -34,7 +34,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
         'mx-auto flex w-full flex-col',
         type !== 'FORTPASSWORD'
           ? 'max-w-[480px] px-[64px] pt-[160px]'
-          : 'max-w-[400px] justify-center pb-[96px] pt-[96px]'
+          : 'max-w-[400px] justify-center pb-[96px] pt-[96px] text-center'
       )}
     >
       <img className="h-[96px]" src={AuthLockSvg} alt="" />
@@ -49,8 +49,8 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
           </div>
         </div>
       ) : (
-        <div className="mb-[40px] mt-[24px] flex flex-col items-center justify-center gap-[8px] text-center">
-          <h3 className="text-3xl">Forgot your password?</h3>
+        <div className="mb-[40px] mt-[24px] flex flex-col gap-[8px]">
+          <h3 className="text-3xl font-[700]">Forgot your password?</h3>
           <p className="text-sm font-[400] text-gray-400">
             Please enter the email address associated with your account and We will email you a link to reset your
             password.
@@ -60,7 +60,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
       {type === 'LOGIN' && (
         <Alert
           className="mb-[24px]"
-          description="Use email : demo@minimals.cc / password : demo1234"
+          description="Use email : demo@minimals.ccg / password : demo1234"
           type="info"
           showIcon
         />
@@ -99,7 +99,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
           </Form.Item>
         )}
         {type === 'FORTPASSWORD' && (
-          <Form.Item className="flex cursor-pointer items-center justify-center hover:underline">
+          <Form.Item className="cursor-pointer hover:underline">
             <a href="/auth/login">Return to sign in</a>
           </Form.Item>
         )}

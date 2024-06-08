@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/src/fonts/PublicSans-Regular.ttf') format('truetype');
+}
+
 html,
 body,
 #root {
   height: 100%;
+  font-family: 'Public Sans';
 }

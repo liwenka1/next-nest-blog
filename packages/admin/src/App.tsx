@@ -18,7 +18,8 @@ const App = () => {
       locale={zhCN}
       theme={{
         token: {
-          colorPrimary: primaryColor
+          colorPrimary: primaryColor,
+          fontFamily: 'Public Sans'
         }
       }}
     >
