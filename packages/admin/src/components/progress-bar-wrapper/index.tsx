@@ -6,6 +6,7 @@ interface ProgressBarWrapperProps {
 
 const ProgressBarWrapper: React.FC<ProgressBarWrapperProps> = ({ children }) => {
   useProgressHook()
+
   return <>{children}</>
 }
 

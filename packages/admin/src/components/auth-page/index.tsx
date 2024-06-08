@@ -1,16 +1,13 @@
-import { AuthForm } from './view'
-import LoingPng from '@/assets/login.png'
+import { AuthForm, AuthImage } from './view'
 
 interface AuthPageProps {
-  type: 'LOGIN' | 'REGISTER'
+  type: 'LOGIN' | 'REGISTER' | 'FORTPASSWORD'
 }
 
 const AuthPage: React.FC<AuthPageProps> = ({ type }) => {
   return (
-    <div className="w-full h-full flex">
-      <div className="flex-1 flex items-center justify-center">
-        <img src={LoingPng} alt="login" />
-      </div>
+    <div className="flex h-full w-full">
+      {type !== 'FORTPASSWORD' && <AuthImage type={type} />}
       <AuthForm type={type} />
     </div>
   )

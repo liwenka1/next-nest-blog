@@ -2,7 +2,7 @@ import { Alert, Button, Form, Input } from 'antd'
 import type { FormProps } from 'antd'
 
 interface AuthFormProps {
-  type: 'LOGIN' | 'REGISTER'
+  type: 'LOGIN' | 'REGISTER' | 'FORTPASSWORD'
 }
 
 type FieldType = {
@@ -19,9 +19,15 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
     console.log('Failed:', errorInfo)
   }
 
+  const buttonDescription = {
+    LOGIN: 'Login',
+    REGISTER: 'Create account',
+    FORTPASSWORD: 'Send Request'
+  }
+
   return (
-    <div className="w-full p-20 max-w-[480px] flex flex-col mx-auto px-[64px] pt-[160px]">
-      <div className="flex flex-col mb-[40px] gap-[16px]">
+    <div className="mx-auto flex w-full max-w-[480px] flex-col p-20 px-[64px] pt-[160px]">
+      <div className="mb-[40px] flex flex-col gap-[16px]">
         <h4 className="text-2xl">{type === 'LOGIN' ? 'Sign in to VVenKai' : 'Get started absolutely free'}</h4>
         <div className="flex flex-row gap-[4px] text-sm">
           <p>{type === 'LOGIN' ? 'New user?' : 'Already have an account?'}</p>
@@ -39,7 +45,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
         />
       )}
       <Form
-        className="w-full flex flex-col"
+        className="flex w-full flex-col"
         name="basic"
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -48,9 +54,11 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
         <Form.Item<FieldType> name="email" rules={[{ required: true, message: 'Email address is required!' }]}>
           <Input size="large" placeholder="Email address" />
         </Form.Item>
-        <Form.Item<FieldType> name="password" rules={[{ required: true, message: 'Password is required!' }]}>
-          <Input.Password size="large" placeholder="Password" />
-        </Form.Item>
+        {type !== 'FORTPASSWORD' && (
+          <Form.Item<FieldType> name="password" rules={[{ required: true, message: 'Password is required!' }]}>
+            <Input.Password size="large" placeholder="Password" />
+          </Form.Item>
+        )}
         {type === 'LOGIN' && (
           <Form.Item className="self-end underline">
             <a href="/auth/forgot-password">Forgot password?</a>
@@ -58,7 +66,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
         )}
         <Form.Item>
           <Button className="w-full" size="large" type="primary" htmlType="submit">
-            {type === 'LOGIN' ? 'Login' : 'Create account'}
+            {buttonDescription[type]}
           </Button>
         </Form.Item>
         {type === 'REGISTER' && (

@@ -1,5 +1,7 @@
+import AuthPage from '@/components/auth-page'
+
 const ForgotPassword = () => {
-  return <div>ForgotPassword</div>
+  return <AuthPage type="FORTPASSWORD" />
 }
 
 export default ForgotPassword

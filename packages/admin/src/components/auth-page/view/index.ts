@@ -1,3 +1,4 @@
 import AuthForm from './auth-form'
+import AuthImage from './auth-image'
 
-export { AuthForm }
+export { AuthForm, AuthImage }
