@@ -11,6 +11,7 @@
     "format": "prettier --write \"**/*.{js,cjs,ts,tsx,css,json,md}\""
   },
   "dependencies": {
+    "@ant-design/icons": "^5.3.7",
     "ahooks": "^3.8.0",
     "antd": "^5.17.4",
     "axios": "^1.7.2",

@@ -1,6 +1,8 @@
 import { Alert, Button, Form, Input } from 'antd'
 import type { FormProps } from 'antd'
+import { LeftOutlined } from '@ant-design/icons'
 import clsx from 'clsx'
+import { useNavigate } from 'react-router-dom'
 
 import AuthLockSvg from '@/assets/auth-lock.svg'
 
@@ -9,23 +11,30 @@ interface AuthFormProps {
 }
 
 type FieldType = {
+  firstName?: string
+  lastName?: string
   email?: string
   password?: string
 }
 
 const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
+  const buttonDescription = {
+    LOGIN: 'Login',
+    REGISTER: 'Create account',
+    FORTPASSWORD: 'Send Request'
+  }
+
+  const navigate = useNavigate()
+  const handleClick = (path: string) => {
+    navigate(path)
+  }
+
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     console.log('Success:', values)
   }
 
   const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
     console.log('Failed:', errorInfo)
-  }
-
-  const buttonDescription = {
-    LOGIN: 'Login',
-    REGISTER: 'Create account',
-    FORTPASSWORD: 'Send Request'
   }
 
   return (
@@ -37,15 +46,20 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
           : 'max-w-[400px] justify-center pb-[96px] pt-[96px] text-center'
       )}
     >
-      <img className="h-[96px]" src={AuthLockSvg} alt="" />
+      {type === 'FORTPASSWORD' && <img className="h-[96px]" src={AuthLockSvg} alt="AuthLockSvg" />}
       {type !== 'FORTPASSWORD' ? (
         <div className="mb-[40px] flex flex-col gap-[16px]">
-          <h4 className="text-2xl">{type === 'LOGIN' ? 'Sign in to VVenKai' : 'Get started absolutely free'}</h4>
+          <h4 className="text-2xl font-[700]">
+            {type === 'LOGIN' ? 'Sign in to VVenKai' : 'Get started absolutely free'}
+          </h4>
           <div className="flex flex-row gap-[4px] text-sm">
             <p>{type === 'LOGIN' ? 'New user?' : 'Already have an account?'}</p>
-            <a className="text-[#00b96b] hover:underline" href={type === 'LOGIN' ? '/auth/register' : '/auth/login'}>
+            <span
+              className="cursor-pointer text-[#00b96b] hover:underline"
+              onClick={() => handleClick(type === 'LOGIN' ? '/auth/register' : '/auth/login')}
+            >
               {type === 'LOGIN' ? 'Create an account' : 'Sign in'}
-            </a>
+            </span>
           </div>
         </div>
       ) : (
@@ -72,8 +86,18 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
+        {type === 'REGISTER' && (
+          <div className="flex gap-[16px]">
+            <Form.Item<FieldType> name="firstName" rules={[{ required: true, message: 'First name is required!' }]}>
+              <Input size="large" placeholder="First name" />
+            </Form.Item>
+            <Form.Item<FieldType> name="lastName" rules={[{ required: true, message: 'Last name is required!' }]}>
+              <Input size="large" placeholder="Last name" />
+            </Form.Item>
+          </div>
+        )}
         <Form.Item<FieldType> name="email" rules={[{ required: true, message: 'Email address is required!' }]}>
-          <Input size="large" placeholder="Email address" />
+          <Input className="peer" size="large" placeholder="Email address" />
         </Form.Item>
         {type !== 'FORTPASSWORD' && (
           <Form.Item<FieldType> name="password" rules={[{ required: true, message: 'Password is required!' }]}>
@@ -81,8 +105,10 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
           </Form.Item>
         )}
         {type === 'LOGIN' && (
-          <Form.Item className="self-end underline">
-            <a href="/auth/forgot-password">Forgot password?</a>
+          <Form.Item className="self-end">
+            <span className="cursor-pointer underline" onClick={() => handleClick('/auth/forgot-password')}>
+              Forgot password?
+            </span>
           </Form.Item>
         )}
         <Form.Item>
@@ -92,15 +118,20 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
         </Form.Item>
         {type === 'REGISTER' && (
           <Form.Item>
-            By signing up, I agree to&nbsp;
-            <span className="underline">Terms of Service</span>
-            &nbsp;and&nbsp;
-            <span className="underline">Privacy Policy</span>.
+            <div className="text-xs">
+              By signing up, I agree to&nbsp;
+              <span className="underline">Terms of Service</span>
+              &nbsp;and&nbsp;
+              <span className="underline">Privacy Policy</span>.
+            </div>
           </Form.Item>
         )}
         {type === 'FORTPASSWORD' && (
-          <Form.Item className="cursor-pointer hover:underline">
-            <a href="/auth/login">Return to sign in</a>
+          <Form.Item>
+            <div className="flex cursor-pointer items-center justify-center" onClick={() => handleClick('/auth/login')}>
+              <LeftOutlined className="h-[16px] w-[16px]" />
+              <span className="hover:underline">Return to sign in</span>
+            </div>
           </Form.Item>
         )}
       </Form>
