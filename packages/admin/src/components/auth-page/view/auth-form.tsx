@@ -1,6 +1,6 @@
 import { Alert, Button, Form, Input } from 'antd'
 import type { FormProps } from 'antd'
-import { LeftOutlined } from '@ant-design/icons'
+import { ExclamationCircleFilled, LeftOutlined } from '@ant-design/icons'
 import clsx from 'clsx'
 import { useNavigate } from 'react-router-dom'
 
@@ -73,10 +73,15 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
       )}
       {type === 'LOGIN' && (
         <Alert
-          className="mb-[24px]"
-          description="Use email : demo@minimals.ccg / password : demo1234"
-          type="info"
+          className="mb-[24px] border-0 bg-[#e6ffff]"
+          description={
+            <>
+              Use email :&nbsp;<span className="font-[700]">demo@minimals.ccg</span> password :&nbsp;
+              <span className="font-[700]">demo1234</span>
+            </>
+          }
           showIcon
+          icon={<ExclamationCircleFilled style={{ color: 'rgb(0, 184, 217)' }} />}
         />
       )}
       <Form
