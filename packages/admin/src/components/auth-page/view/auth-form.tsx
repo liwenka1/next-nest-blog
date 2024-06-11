@@ -4,7 +4,7 @@ import { ExclamationCircleFilled, LeftOutlined } from '@ant-design/icons'
 import clsx from 'clsx'
 import { useNavigate } from 'react-router-dom'
 
-import AuthLockSvg from '@/assets/auth-lock.svg'
+import LockSvg from '@/assets/auth/lock.svg'
 
 interface AuthFormProps {
   type: 'LOGIN' | 'REGISTER' | 'FORTPASSWORD'
@@ -46,7 +46,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
           : 'max-w-[400px] justify-center pb-[96px] pt-[96px] text-center'
       )}
     >
-      {type === 'FORTPASSWORD' && <img className="h-[96px]" src={AuthLockSvg} alt="AuthLockSvg" />}
+      {type === 'FORTPASSWORD' && <img className="h-[96px]" src={LockSvg} alt="LockSvg" />}
       {type !== 'FORTPASSWORD' ? (
         <div className="mb-[40px] flex flex-col gap-[16px]">
           <h4 className="text-2xl font-[700]">
