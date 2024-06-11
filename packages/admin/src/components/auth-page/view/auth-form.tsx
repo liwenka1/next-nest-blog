@@ -42,7 +42,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
       className={clsx(
         'mx-auto flex w-full flex-col',
         type !== 'FORTPASSWORD'
-          ? 'max-w-[480px] px-[64px] pt-[160px]'
+          ? ['max-w-[480px] px-[16px] py-[120px]', 'mlg:px-[64px] mlg:pt-[160px]']
           : 'max-w-[400px] justify-center pb-[96px] pt-[96px] text-center'
       )}
     >
@@ -64,7 +64,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
         </div>
       ) : (
         <div className="mb-[40px] mt-[24px] flex flex-col gap-[8px]">
-          <h3 className="text-3xl font-[700]">Forgot your password?</h3>
+          <h3 className={clsx('text-2xl font-[700]', 'ssm:text-3xl')}>Forgot your password?</h3>
           <p className="text-sm font-[400] text-gray-400">
             Please enter the email address associated with your account and We will email you a link to reset your
             password.
