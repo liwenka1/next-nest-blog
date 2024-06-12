@@ -31,6 +31,9 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
 
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     console.log('Success:', values)
+    if (type === 'LOGIN') {
+      navigate('/dashboard')
+    }
   }
 
   const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {

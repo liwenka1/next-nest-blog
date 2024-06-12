@@ -7,18 +7,26 @@ const { Header, Sider, Content } = Layout
 
 const items: MenuProps['items'] = [
   {
-    label: 'home',
-    path: '/dashboard/home'
+    key: 'overview',
+    label: 'OVERVIEW',
+    children: [{ key: 'home', label: 'APP' }]
   },
   {
-    label: 'about',
-    path: '/dashboard/about'
+    key: 'manegement',
+    label: 'MANAGEMENT',
+    children: [{ key: 'about', label: 'ABOUT' }]
+  },
+  {
+    key: 'other-cases',
+    label: 'OTHER CASES',
+    children: [
+      { key: '9', label: 'Option 9' },
+      { key: '10', label: 'Option 10' },
+      { key: '11', label: 'Option 11' },
+      { key: '12', label: 'Option 12' }
+    ]
   }
-].map((nav) => ({
-  key: nav.path,
-  icon: null,
-  label: nav.label
-}))
+]
 
 const DashboardLayout = () => {
   const navigate = useNavigate()
