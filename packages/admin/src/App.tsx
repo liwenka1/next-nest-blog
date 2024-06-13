@@ -7,11 +7,14 @@ import 'antd/dist/reset.css'
 
 import { useGlobalStore } from '@/stores'
 import router from './router'
+import { useI18n } from './locales'
 
 dayjs.locale('zh-cn')
 
 const App = () => {
   const { primaryColor } = useGlobalStore()
+
+  useI18n()
 
   return (
     <ConfigProvider

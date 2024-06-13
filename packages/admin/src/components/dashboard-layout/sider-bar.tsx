@@ -12,7 +12,7 @@ const items: MenuProps['items'] = [
   {
     key: 'overview',
     label: 'OVERVIEW',
-    children: [{ key: 'home', label: 'APP', icon: <SvgIcon name="ic_dashboard" /> }]
+    children: [{ key: '/dashboard/home', label: 'APP', icon: <SvgIcon name="ic_dashboard" /> }]
   },
   {
     key: 'manegement',
@@ -23,7 +23,7 @@ const items: MenuProps['items'] = [
     key: 'other-cases',
     label: 'OTHER CASES',
     children: [
-      { key: '9', label: 'Option 9' },
+      { key: '9', label: 'Option 9', children: [{ key: 'about', label: 'ABOUT' }] },
       { key: '10', label: 'Option 10' },
       { key: '11', label: 'Option 11' },
       { key: '12', label: 'Option 12' }
