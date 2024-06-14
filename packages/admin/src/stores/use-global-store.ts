@@ -4,13 +4,17 @@ import { persist } from 'zustand/middleware'
 interface GlobalState {
   primaryColor: string
   setColor: (color: string) => void
+  menuMode: 'horizontal' | 'inline'
+  setMenuMode: (menuMode: GlobalState['menuMode']) => void
 }
 
 export const useGlobalStore = create<GlobalState>()(
   persist(
     (set) => ({
       primaryColor: '#00b96b',
-      setColor: (color) => set(() => ({ primaryColor: color }))
+      setColor: (color) => set({ primaryColor: color }),
+      menuMode: 'inline',
+      setMenuMode: (menuMode) => set({ menuMode })
     }),
     {
       name: 'primaryColor',
