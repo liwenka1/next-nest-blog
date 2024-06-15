@@ -1,3 +1,7 @@
 export default {
-  whatever: `你好 {placeholder}`
+  en: {
+    translation: {
+      'Welcome to React': 'Welcome to React and react-i18next'
+    }
+  }
 }
