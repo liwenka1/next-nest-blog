@@ -4,7 +4,7 @@ import { Button, Layout, Menu } from 'antd'
 import type { MenuProps } from 'antd'
 import { MenuFoldOutlined } from '@ant-design/icons'
 
-import SvgIcon from '../svg-icon'
+import { SvgIcon } from '../icon'
 
 const { Sider } = Layout
 
