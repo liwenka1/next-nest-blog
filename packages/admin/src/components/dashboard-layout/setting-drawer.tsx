@@ -3,6 +3,7 @@ import { Button, Drawer } from 'antd'
 
 import { useGlobalStore } from '@/stores'
 import { IconButton, SvgIcon } from '../icon'
+import { CloseOutlined } from '@ant-design/icons'
 
 const SettingDrawer = () => {
   const { setMenuMode } = useGlobalStore()
@@ -22,7 +23,17 @@ const SettingDrawer = () => {
       <IconButton onClick={showDrawer}>
         <SvgIcon name="ic-setting" size={24} />
       </IconButton>
-      <Drawer title="Basic Drawer" onClose={onClose} open={open}>
+      <Drawer
+        title="Settings"
+        onClose={onClose}
+        open={open}
+        extra={
+          <IconButton>
+            <CloseOutlined />
+          </IconButton>
+        }
+        closeIcon={false}
+      >
         <p>Some contents...</p>
         <p>Some contents...</p>
         <p>Some contents...</p>

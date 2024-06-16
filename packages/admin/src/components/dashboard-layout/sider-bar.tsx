@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { Button, Layout, Menu } from 'antd'
+import { Layout, Menu } from 'antd'
 import type { MenuProps } from 'antd'
-import { MenuFoldOutlined } from '@ant-design/icons'
+import { LeftOutlined, RightOutlined } from '@ant-design/icons'
+import clsx from 'clsx'
 
-import { SvgIcon } from '../icon'
+import { IconButton, SvgIcon } from '../icon'
 
 const { Sider } = Layout
 
@@ -12,7 +13,7 @@ const items: MenuProps['items'] = [
   {
     key: 'overview',
     label: 'OVERVIEW',
-    children: [{ key: '/dashboard/home', label: 'APP', icon: <SvgIcon name="ic_dashboard" /> }]
+    children: [{ key: '/dashboard/home', label: 'APP', icon: <SvgIcon name="ic-dashboard" /> }]
   },
   {
     key: 'manegement',
@@ -42,23 +43,23 @@ const SiderBar = () => {
   const [collapsed, setCollapsed] = useState(false)
 
   return (
-    <Sider trigger={null} collapsible collapsed={collapsed} theme="light">
-      <div
-        className="relative"
-        style={{
-          height: 32,
-          margin: 16,
-          background: 'rgba(0, 0, 0, 0.2)',
-          zIndex: 200
-        }}
-      >
-        <Button
-          className="absolute -right-7 top-0"
-          type="link"
-          icon={<MenuFoldOutlined />}
-          onClick={() => setCollapsed(!collapsed)}
-        />
+    <Sider
+      className={clsx('hidden border-r', 'lxl:block')}
+      width={300}
+      trigger={null}
+      collapsible
+      collapsed={collapsed}
+      theme="light"
+    >
+      <div className="flex h-[68px] items-center pb-[8px] pl-[28px] pt-[20px]">
+        <SvgIcon name="ic-logo" size={40} />
       </div>
+      <IconButton
+        className="absolute right-0 top-[24px] translate-x-1/2 border"
+        onClick={() => setCollapsed(!collapsed)}
+      >
+        {collapsed ? <RightOutlined /> : <LeftOutlined />}
+      </IconButton>
       <Menu mode="inline" defaultSelectedKeys={[pathname]} items={items} onClick={handleMenuClick} />
     </Sider>
   )

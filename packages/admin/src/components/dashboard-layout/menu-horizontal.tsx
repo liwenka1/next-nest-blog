@@ -8,7 +8,7 @@ const items: MenuProps['items'] = [
   {
     key: '/dashboard/home',
     label: 'APP',
-    icon: <SvgIcon name="ic_dashboard" size={24} />
+    icon: <SvgIcon name="ic-dashboard" size={24} />
   },
   {
     key: 'about',
