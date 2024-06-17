@@ -43,7 +43,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
   return (
     <div
       className={clsx(
-        'mx-auto flex w-full flex-col',
+        'mx-auto flex w-full flex-1 flex-col',
         type !== 'FORTPASSWORD'
           ? ['max-w-[480px] px-[16px] py-[120px]', 'mlg:px-[64px] mlg:pt-[160px]']
           : 'max-w-[400px] justify-center pb-[96px] pt-[96px] text-center'
