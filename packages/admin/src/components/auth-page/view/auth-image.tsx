@@ -14,7 +14,7 @@ const AuthImage: React.FC<AuthImageProps> = ({ type }) => {
       )}
     >
       <span className={clsx('max-w-[480px] text-center text-2xl font-[700]', 'xl:text-3xl', '2xl:text-4xl')}>
-        {type === 'LOGIN' ? 'Hi, Welcome back' : 'Manage the job more effectively with Minimal'}
+        {type === 'LOGIN' ? 'Hi, Welcome back' : 'Manage the job'}
       </span>
       <img
         className={clsx('max-w-[480px]', 'xl:max-w-[560px]', '2xl:max-w-[720px]')}
