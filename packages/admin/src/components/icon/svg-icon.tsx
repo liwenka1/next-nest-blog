@@ -24,7 +24,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({
 
   return (
     <svg
-      className={clsx('inline-block h-[13m] w-[1em] overflow-hidden fill-current outline-none', className)}
+      className={clsx('inline-block h-[1em] w-[1em] overflow-hidden fill-current outline-none', className)}
       {...props}
       aria-hidden="true"
       style={svgStyle}

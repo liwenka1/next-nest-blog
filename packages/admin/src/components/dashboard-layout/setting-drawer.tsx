@@ -4,6 +4,7 @@ import { Button, Drawer } from 'antd'
 import { useGlobalStore } from '@/stores'
 import { IconButton, SvgIcon } from '../icon'
 import { CloseOutlined } from '@ant-design/icons'
+import SettingCard from './setting-card'
 
 const SettingDrawer = () => {
   const { setMenuMode } = useGlobalStore()
@@ -38,7 +39,10 @@ const SettingDrawer = () => {
         <p>Some contents...</p>
         <p>Some contents...</p>
         <Button onClick={() => setMenuMode('horizontal')}>horizontal</Button>
-        <Button onClick={() => setMenuMode('inline')}>inline</Button>
+        <Button className="mb-[100px]" onClick={() => setMenuMode('inline')}>
+          inline
+        </Button>
+        <SettingCard />
       </Drawer>
     </>
   )
