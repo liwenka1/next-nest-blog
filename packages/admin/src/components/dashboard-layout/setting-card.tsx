@@ -23,7 +23,7 @@ const SettingCard = () => {
           <li>
             <Button
               className="flex h-[64px] w-full items-center justify-center"
-              style={{ backgroundColor: rgbToRgba(primaryColor, '0.08') }}
+              style={{ backgroundColor: rgbToRgba(primaryColor, primaryColor === color ? '0.08' : '0') }}
               onClick={() => setColor(color)}
             >
               <SvgIcon name="ic-siderbar-duotone" size={28} color={color} />
