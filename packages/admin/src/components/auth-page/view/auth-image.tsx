@@ -2,7 +2,7 @@ import clsx from 'clsx'
 
 import DashboardPng from '@/assets/auth/dashboard.png'
 interface AuthImageProps {
-  type: 'LOGIN' | 'REGISTER'
+  type: 'LOGIN' | 'REGISTER' | 'FORTPASSWORD'
 }
 
 const AuthImage: React.FC<AuthImageProps> = ({ type }) => {

@@ -7,7 +7,7 @@ interface AuthPageProps {
 const AuthPage: React.FC<AuthPageProps> = ({ type }) => {
   return (
     <div className="flex h-full w-full">
-      {type !== 'FORTPASSWORD' && <AuthImage type={type} />}
+      <AuthImage type={type} />
       <AuthForm type={type} />
     </div>
   )
