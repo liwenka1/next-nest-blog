@@ -19,6 +19,9 @@ export default {
       },
       boxShadow: {
         light: '-8px 8px 20px -4px rgba(145, 158, 171, 0.12)'
+      },
+      borderColor: {
+        light: 'rgba(145, 158, 171, 0.08)'
       }
     }
   },

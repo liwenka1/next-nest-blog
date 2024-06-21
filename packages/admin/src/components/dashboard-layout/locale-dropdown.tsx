@@ -1,8 +1,8 @@
 import type { MenuProps } from 'antd'
 import { Dropdown } from 'antd'
 
-import { IconButton, SvgIcon } from '../icon'
 import { useI18n } from '@/locales'
+import { IconButton, SvgIcon } from '../ui'
 
 const LocaleDropdown = () => {
   const changeLanguage = useI18n()

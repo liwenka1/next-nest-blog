@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button, Drawer } from 'antd'
 
 import { useGlobalStore } from '@/stores'
-import { IconButton, SvgIcon } from '../icon'
+import { IconButton, SvgIcon } from '../ui'
 import { CloseOutlined } from '@ant-design/icons'
 import SettingCard from './setting-card'
 
@@ -29,15 +29,15 @@ const SettingDrawer = () => {
         onClose={onClose}
         open={open}
         extra={
-          <IconButton>
+          <IconButton onClick={onClose}>
             <CloseOutlined />
           </IconButton>
         }
         closeIcon={false}
+        styles={{
+          mask: { backgroundColor: 'transparent' }
+        }}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
         <Button onClick={() => setMenuMode('horizontal')}>horizontal</Button>
         <Button className="mb-[100px]" onClick={() => setMenuMode('inline')}>
           inline
