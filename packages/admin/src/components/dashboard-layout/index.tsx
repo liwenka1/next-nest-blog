@@ -1,8 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { Layout } from 'antd'
 
-import SiderBar from './sider-bar'
-import HeaderBar from './header-bar'
+import { HeaderBar, SiderBar } from './components'
 import { useGlobalStore } from '@/stores'
 
 const { Content } = Layout

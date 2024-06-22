@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { Button, Drawer } from 'antd'
 
 import { useGlobalStore } from '@/stores'
-import { IconButton, SvgIcon } from '../ui'
+import { IconButton, SvgIcon } from '@/components/ui'
 import { CloseOutlined } from '@ant-design/icons'
-import SettingCard from './setting-card'
+import { SettingCard } from './components'
 
 const SettingDrawer = () => {
   const { setMenuMode } = useGlobalStore()

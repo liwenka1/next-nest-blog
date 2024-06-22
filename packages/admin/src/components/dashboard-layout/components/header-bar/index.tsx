@@ -1,9 +1,7 @@
 import { Layout } from 'antd'
 
 import { useGlobalStore } from '@/stores'
-import MenuHorizontal from './menu-horizontal'
-import LocaleDropdown from './locale-dropdown'
-import SettingDrawer from './setting-drawer'
+import { MenuHorizontal, LocaleDropdown, SettingDrawer } from './components'
 
 const { Header } = Layout
 

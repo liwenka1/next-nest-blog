@@ -1,4 +1,4 @@
-import { AuthForm, AuthImage } from './view'
+import { AuthForm, AuthImage } from './components'
 
 interface AuthPageProps {
   type: 'LOGIN' | 'REGISTER' | 'FORTPASSWORD'

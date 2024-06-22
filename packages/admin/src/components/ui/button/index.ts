@@ -1,4 +1,5 @@
 import IconButton from './icon-button'
+import ModeButton from './mode-button'
 import ShodowButton from './shadow-button'
 
-export { IconButton, ShodowButton }
+export { IconButton, ModeButton, ShodowButton }

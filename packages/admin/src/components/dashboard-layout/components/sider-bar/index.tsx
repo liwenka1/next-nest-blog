@@ -5,7 +5,7 @@ import type { MenuProps } from 'antd'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import clsx from 'clsx'
 
-import { IconButton, SvgIcon } from '../ui'
+import { IconButton, SvgIcon } from '@/components/ui'
 
 const { Sider } = Layout
 

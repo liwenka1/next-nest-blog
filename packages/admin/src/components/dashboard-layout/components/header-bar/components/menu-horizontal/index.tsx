@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { Menu } from 'antd'
 import type { MenuProps } from 'antd'
 
-import { SvgIcon } from '../ui'
+import { SvgIcon } from '@/components/ui'
 
 const items: MenuProps['items'] = [
   {
