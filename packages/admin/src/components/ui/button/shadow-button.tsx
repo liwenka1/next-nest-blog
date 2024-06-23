@@ -1,8 +1,7 @@
 import clsx from 'clsx'
-import { ButtonHTMLAttributes, ReactNode } from 'react'
 
-interface ShodowButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode
+interface ShodowButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode
   className?: string
 }
 

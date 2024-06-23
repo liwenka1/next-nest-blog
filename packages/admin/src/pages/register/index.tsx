@@ -1,4 +1,4 @@
-import AuthPage from '@/components/auth-page'
+import { AuthPage } from '@/components'
 
 const Register = () => {
   return <AuthPage type="REGISTER" />

@@ -8,6 +8,7 @@ import 'antd/dist/reset.css'
 import { useGlobalStore } from '@/stores'
 import router from './router'
 import { useI18n } from './locales'
+import { ThemeProvider } from './components'
 
 dayjs.locale('zh-cn')
 
@@ -17,17 +18,19 @@ const App = () => {
   useI18n()
 
   return (
-    <ConfigProvider
-      locale={zhCN}
-      theme={{
-        token: {
-          colorPrimary: primaryColor,
-          fontFamily: 'Public Sans'
-        }
-      }}
-    >
-      <RouterProvider router={router} />
-    </ConfigProvider>
+    <ThemeProvider>
+      <ConfigProvider
+        locale={zhCN}
+        theme={{
+          token: {
+            colorPrimary: primaryColor,
+            fontFamily: 'Public Sans'
+          }
+        }}
+      >
+        <RouterProvider router={router} />
+      </ConfigProvider>
+    </ThemeProvider>
   )
 }
 

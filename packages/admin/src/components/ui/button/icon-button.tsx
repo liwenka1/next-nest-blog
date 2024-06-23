@@ -1,8 +1,7 @@
 import clsx from 'clsx'
-import { ButtonHTMLAttributes, ReactNode } from 'react'
 
-interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode
+interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode
   className?: string
 }
 

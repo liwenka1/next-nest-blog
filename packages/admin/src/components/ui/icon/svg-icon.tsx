@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import { CSSProperties } from 'react'
 
 interface SvgIconProps {
   name: string
@@ -7,7 +6,7 @@ interface SvgIconProps {
   color?: string
   size?: string | number
   className?: string
-  style?: CSSProperties
+  style?: React.CSSProperties
 }
 
 const SvgIcon: React.FC<SvgIconProps> = ({
@@ -20,7 +19,7 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   ...props
 }) => {
   const symbolId = `#${prefix}-${name}`
-  const svgStyle: CSSProperties = { verticalAlign: 'middle', width: size, height: size, color, ...style }
+  const svgStyle: React.CSSProperties = { verticalAlign: 'middle', width: size, height: size, color, ...style }
 
   return (
     <svg

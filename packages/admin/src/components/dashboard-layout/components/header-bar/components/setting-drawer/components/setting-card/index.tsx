@@ -3,12 +3,12 @@ import { ModeCard, NavCard, PresetsCard } from './components'
 const SettingCard = () => {
   const CardList = [
     {
-      title: 'Presets',
-      comp: <PresetsCard />
-    },
-    {
       title: 'Nav',
       comp: <NavCard />
+    },
+    {
+      title: 'Presets',
+      comp: <PresetsCard />
     }
   ]
 

@@ -1,11 +1,16 @@
 import { Switch } from 'antd'
 
-import { SvgIcon } from '@/components/ui'
-import { ModeButton } from '@/components/ui/button'
+import { SvgIcon, ModeButton } from '@/components/ui'
+import { useThemeHook } from '@/hooks'
 
 const ModeCard = () => {
+  const { setTheme } = useThemeHook()
   const onChange = (checked: boolean) => {
-    console.log(`switch to ${checked}`)
+    if (checked) {
+      setTheme('dark')
+    } else {
+      setTheme('light')
+    }
   }
 
   return (

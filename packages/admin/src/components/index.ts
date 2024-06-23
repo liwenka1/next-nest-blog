@@ -1,4 +1,6 @@
+import AuthPage from './auth-page'
 import DashboardLayout from './dashboard-layout'
-import ProgressBarWrapper from './progress-bar-wrapper'
+import ProgressBar from './progress-bar'
+import ThemeProvider from './theme-provider'
 
-export { DashboardLayout, ProgressBarWrapper }
+export { AuthPage, DashboardLayout, ProgressBar, ThemeProvider }

@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       Home Page
-      <h2>{t('Welcome to React')}</h2>
+      <h2 className="dark:text-red-700">{t('Welcome to React')}</h2>
       <Button type="primary">测试</Button>
     </div>
   )

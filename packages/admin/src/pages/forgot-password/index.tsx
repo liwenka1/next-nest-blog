@@ -1,4 +1,4 @@
-import AuthPage from '@/components/auth-page'
+import { AuthPage } from '@/components'
 
 const ForgotPassword = () => {
   return <AuthPage type="FORTPASSWORD" />
