@@ -1,11 +1,11 @@
-import { useProgressHook } from '@/hooks'
+import { useProgress } from '@/hooks'
 
 interface ProgressBarProps {
   children: React.ReactNode
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ children }) => {
-  useProgressHook()
+  useProgress()
 
   return <>{children}</>
 }

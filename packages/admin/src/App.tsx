@@ -5,15 +5,16 @@ import zhCN from 'antd/locale/zh_CN'
 import 'dayjs/locale/zh-cn'
 import 'antd/dist/reset.css'
 
-import { useGlobalStore } from '@/stores'
+import { useSettingStore } from '@/stores'
 import router from './router'
 import { useI18n } from './locales'
 import { ThemeProvider } from './components'
+import { themePresetsColors } from './config/theme'
 
 dayjs.locale('zh-cn')
 
 const App = () => {
-  const { primaryColor } = useGlobalStore()
+  const { setting } = useSettingStore()
 
   useI18n()
 
@@ -23,7 +24,7 @@ const App = () => {
         locale={zhCN}
         theme={{
           token: {
-            colorPrimary: primaryColor,
+            colorPrimary: themePresetsColors[setting.themePresets],
             fontFamily: 'Public Sans'
           }
         }}

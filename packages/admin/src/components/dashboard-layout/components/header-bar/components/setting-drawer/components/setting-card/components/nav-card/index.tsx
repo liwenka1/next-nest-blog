@@ -2,13 +2,13 @@ import { ShodowButton, SvgIcon } from '@/components/ui'
 import { useGlobalStore } from '@/stores'
 
 const NavCard = () => {
-  const { primaryColor } = useGlobalStore()
+  const { primaryColor, setMenuMode } = useGlobalStore()
   const NavCardList = [
     {
       title: 'Layout',
       comp: (
         <>
-          <ShodowButton className="h-[64px]">
+          <ShodowButton className="h-[64px]" onClick={() => setMenuMode('inline')}>
             <div className="flex h-full w-[32px] flex-col gap-[4px] p-[6px]">
               <div className="h-[10px] w-[10px] flex-shrink-0 rounded-full" style={{ backgroundColor: primaryColor }} />
               <div
@@ -24,7 +24,7 @@ const NavCard = () => {
               <div className="h-full w-full rounded opacity-20" style={{ backgroundColor: primaryColor }} />
             </div>
           </ShodowButton>
-          <ShodowButton className="h-[64px] flex-col">
+          <ShodowButton className="h-[64px] flex-col" onClick={() => setMenuMode('horizontal')}>
             <div className="flex h-[22px] w-full items-center gap-[4px] p-[6px]">
               <div className="h-[10px] w-[10px] flex-shrink-0 rounded-full" style={{ backgroundColor: primaryColor }} />
               <div

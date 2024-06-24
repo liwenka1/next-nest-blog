@@ -1,10 +1,10 @@
 import { Switch } from 'antd'
 
 import { SvgIcon, ModeButton } from '@/components/ui'
-import { useThemeHook } from '@/hooks'
+import { useTheme } from '@/hooks'
 
 const ModeCard = () => {
-  const { setTheme } = useThemeHook()
+  const { setTheme } = useTheme()
   const onChange = (checked: boolean) => {
     if (checked) {
       setTheme('dark')

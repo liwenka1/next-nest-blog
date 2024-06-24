@@ -1,4 +1,4 @@
-import { useProgressHook } from './use-progress-hook'
-import { useThemeHook } from './use-theme-hook'
+import { useProgress } from './use-progress'
+import { useTheme } from './use-theme'
 
-export { useProgressHook, useThemeHook }
+export { useProgress, useTheme }

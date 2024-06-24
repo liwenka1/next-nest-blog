@@ -17,7 +17,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      'public-sans': '/src/fonts/PublicSans-Regular.ttf'
+      '#': path.resolve(__dirname, 'types')
     }
   }
 })
