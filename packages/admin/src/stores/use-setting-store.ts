@@ -11,9 +11,8 @@ interface SettingState {
   collapsed: boolean
 }
 
-interface SettingStore {
-  setting: SettingState
-  setSetting: (setting: SettingStore['setting']) => void
+interface SettingStore extends SettingState {
+  setSetting: <K extends keyof SettingState>(key: K, value: SettingState[K]) => void
   resetSetting: () => void
 }
 
@@ -27,7 +26,7 @@ const defaultSetting = {
 }
 
 export const useSettingStore = create<SettingStore>()((set) => ({
-  setting: defaultSetting,
-  setSetting: (setting) => set({ setting }),
-  resetSetting: () => set({ setting: defaultSetting })
+  ...defaultSetting,
+  setSetting: (key, value) => set({ [key]: value }),
+  resetSetting: () => set(defaultSetting)
 }))

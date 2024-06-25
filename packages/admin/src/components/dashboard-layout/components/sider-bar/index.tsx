@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 import type { MenuProps } from 'antd'
@@ -6,6 +5,7 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import clsx from 'clsx'
 
 import { IconButton, SvgIcon } from '@/components/ui'
+import { useSettingStore } from '@/stores'
 
 const { Sider } = Layout
 
@@ -40,7 +40,7 @@ const SiderBar = () => {
     navigate(key)
   }
 
-  const [collapsed, setCollapsed] = useState(false)
+  const { collapsed, setSetting } = useSettingStore()
 
   return (
     <Sider
@@ -56,7 +56,7 @@ const SiderBar = () => {
       </div>
       <IconButton
         className="absolute right-0 top-[24px] translate-x-1/2 border"
-        onClick={() => setCollapsed(!collapsed)}
+        onClick={() => setSetting('collapsed', !collapsed)}
       >
         {collapsed ? <RightOutlined /> : <LeftOutlined />}
       </IconButton>

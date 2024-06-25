@@ -14,7 +14,7 @@ import { themePresetsColors } from './config/theme'
 dayjs.locale('zh-cn')
 
 const App = () => {
-  const { setting } = useSettingStore()
+  const { themePresets } = useSettingStore()
 
   useI18n()
 
@@ -24,7 +24,7 @@ const App = () => {
         locale={zhCN}
         theme={{
           token: {
-            colorPrimary: themePresetsColors[setting.themePresets],
+            colorPrimary: themePresetsColors[themePresets],
             fontFamily: 'Public Sans'
           }
         }}

@@ -1,12 +1,14 @@
 import { Layout } from 'antd'
 
-import { useGlobalStore } from '@/stores'
+import { useSettingStore } from '@/stores'
 import { MenuHorizontal, LocaleDropdown, SettingDrawer } from './components'
+
+import { ThemeNavLatout } from '#/enum'
 
 const { Header } = Layout
 
 const HeaderBar = () => {
-  const { menuMode } = useGlobalStore()
+  const { themeNavLatout } = useSettingStore()
 
   return (
     <>
@@ -14,7 +16,7 @@ const HeaderBar = () => {
         <LocaleDropdown />
         <SettingDrawer />
       </Header>
-      {menuMode === 'horizontal' && <MenuHorizontal />}
+      {themeNavLatout === ThemeNavLatout.Horizontal && <MenuHorizontal />}
     </>
   )
 }

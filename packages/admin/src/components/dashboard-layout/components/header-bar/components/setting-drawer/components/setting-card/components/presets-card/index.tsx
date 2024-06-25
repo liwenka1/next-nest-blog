@@ -4,10 +4,11 @@ import { SvgIcon } from '@/components/ui'
 import { rgbToRgba } from '@/utils/util'
 import { themePresetsColors } from '@/config/theme'
 import { useSettingStore } from '@/stores/use-setting-store'
+
 import { ThemePresets } from '#/enum'
 
 const PresetsCard = () => {
-  const { setting, setSetting } = useSettingStore()
+  const { themePresets, setSetting } = useSettingStore()
 
   return (
     <ul className="grid grid-cols-3 gap-[12px]">
@@ -15,8 +16,8 @@ const PresetsCard = () => {
         <li>
           <Button
             className="flex h-[64px] w-full items-center justify-center border-0"
-            style={{ backgroundColor: rgbToRgba(color, setting.themePresets === preset ? '0.08' : '0') }}
-            onClick={() => setSetting({ ...setting, themePresets: preset as ThemePresets })}
+            style={{ backgroundColor: rgbToRgba(color, themePresets === preset ? '0.08' : '0') }}
+            onClick={() => setSetting('themePresets', preset as ThemePresets)}
           >
             <SvgIcon name="ic-siderbar-duotone" size={28} color={color} />
           </Button>

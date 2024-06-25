@@ -2,16 +2,18 @@ import { Outlet } from 'react-router-dom'
 import { Layout } from 'antd'
 
 import { HeaderBar, SiderBar } from './components'
-import { useGlobalStore } from '@/stores'
+import { useSettingStore } from '@/stores'
+
+import { ThemeNavLatout } from '#/enum'
 
 const { Content } = Layout
 
 const DashboardLayout = () => {
-  const { menuMode } = useGlobalStore()
+  const { themeNavLatout } = useSettingStore()
 
   return (
     <Layout className="h-full">
-      {menuMode === 'inline' && <SiderBar />}
+      {themeNavLatout === ThemeNavLatout.Inline && <SiderBar />}
       <Layout className="flex h-full w-full flex-col" style={{ flexDirection: 'column' }}>
         <HeaderBar />
         <Content className="h-full w-full p-[16px]">
