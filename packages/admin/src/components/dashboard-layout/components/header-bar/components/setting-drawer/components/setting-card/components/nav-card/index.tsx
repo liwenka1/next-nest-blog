@@ -2,10 +2,10 @@ import { ShodowButton, SvgIcon } from '@/components/ui'
 import { themePresetsColors } from '@/config/theme'
 import { useSettingStore } from '@/stores'
 
-import { ThemeNavLatout } from '#/enum'
+import { ThemeNavLatout, ThemeNavColor } from '#/enum'
 
 const NavCard = () => {
-  const { themePresets, themeNavLatout, collapsed, setSetting } = useSettingStore()
+  const { themePresets, themeNavLatout, collapsed, themeNavColor, setSetting } = useSettingStore()
   const themeNavLatoutStyle = (latout: ThemeNavLatout, isCollapsed?: boolean) => {
     if (
       (latout === ThemeNavLatout.Horizontal && latout === themeNavLatout) ||
@@ -109,13 +109,33 @@ const NavCard = () => {
       title: 'Color',
       comp: (
         <>
-          <ShodowButton className="h-[56px] gap-[12px]">
-            <SvgIcon name="ic-sidebar-filled" size={24} color={themePresetsColors[themePresets]} />
-            <span>integrate</span>
+          <ShodowButton
+            className="h-[56px] gap-[12px]"
+            shadow={themeNavColor === ThemeNavColor.Integrate}
+            onClick={() => {
+              setSetting('themeNavColor', ThemeNavColor.Integrate)
+            }}
+          >
+            <SvgIcon
+              name="ic-sidebar-filled"
+              size={24}
+              color={themeNavColor === ThemeNavColor.Integrate ? themePresetsColors[themePresets] : ''}
+            />
+            <span>Integrate</span>
           </ShodowButton>
-          <ShodowButton className="h-[56px] gap-[12px]">
-            <SvgIcon name="ic-sidebar-outline" size={24} color={themePresetsColors[themePresets]} />
-            <span>apparent</span>
+          <ShodowButton
+            className="h-[56px] gap-[12px]"
+            shadow={themeNavColor === ThemeNavColor.Apparent}
+            onClick={() => {
+              setSetting('themeNavColor', ThemeNavColor.Apparent)
+            }}
+          >
+            <SvgIcon
+              name="ic-sidebar-outline"
+              size={24}
+              color={themeNavColor === ThemeNavColor.Apparent ? themePresetsColors[themePresets] : ''}
+            />
+            <span>Apparent</span>
           </ShodowButton>
         </>
       )
