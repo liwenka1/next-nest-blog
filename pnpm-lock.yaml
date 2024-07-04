@@ -214,12 +214,18 @@ importers:
       '@radix-ui/react-icons':
         specifier: ^1.3.0
         version: registry.npmjs.org/@radix-ui/react-icons@1.3.0(react@18.3.1)
+      '@radix-ui/react-slot':
+        specifier: ^1.1.0
+        version: registry.npmjs.org/@radix-ui/react-slot@1.1.0(@types/react@18.3.2)(react@18.3.1)
       class-variance-authority:
         specifier: ^0.7.0
         version: registry.npmjs.org/class-variance-authority@0.7.0
       clsx:
         specifier: ^2.1.1
         version: registry.npmjs.org/clsx@2.1.1
+      framer-motion:
+        specifier: ^11.2.13
+        version: registry.npmjs.org/framer-motion@11.2.13(react-dom@18.3.1)(react@18.3.1)
       next:
         specifier: 14.2.3
         version: registry.npmjs.org/next@14.2.3(react-dom@18.3.1)(react@18.3.1)
@@ -2998,6 +3004,7 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==, tarball: https://registry.npmjs.org/tslib/-/tslib-2.6.2.tgz}
+    dev: false
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==, tarball: https://registry.npmjs.org/type-check/-/type-check-0.4.0.tgz}
@@ -4940,7 +4947,7 @@ packages:
     hasBin: true
     dependencies:
       nx: registry.npmjs.org/nx@19.0.5
-      tslib: 2.6.2
+      tslib: registry.npmjs.org/tslib@2.6.2
     transitivePeerDependencies:
       - '@swc-node/register'
       - '@swc/core'
@@ -5319,6 +5326,22 @@ packages:
     dependencies:
       '@prisma/debug': registry.npmjs.org/@prisma/debug@5.14.0
 
+  registry.npmjs.org/@radix-ui/react-compose-refs@1.1.0(@types/react@18.3.2)(react@18.3.1):
+    resolution: {integrity: sha512-b4inOtiaOnYf9KWyO3jAeeCG6FeyfY6ldiEPanbUjWd+xIk5wZeHa8yVwmrJ2vderhu/BQvzCrJI0lHd+wIiqw==, tarball: https://registry.npmjs.org/@radix-ui/react-compose-refs/-/react-compose-refs-1.1.0.tgz}
+    id: registry.npmjs.org/@radix-ui/react-compose-refs/1.1.0
+    name: '@radix-ui/react-compose-refs'
+    version: 1.1.0
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@types/react': registry.npmjs.org/@types/react@18.3.2
+      react: registry.npmjs.org/react@18.3.1
+    dev: false
+
   registry.npmjs.org/@radix-ui/react-icons@1.3.0(react@18.3.1):
     resolution: {integrity: sha512-jQxj/0LKgp+j9BiTXz3O3sgs26RNet2iLWmsPyRz2SIcR4q/4SbazXfnYwbAr+vLYKSfc7qxzyGQA1HLlYiuNw==, tarball: https://registry.npmjs.org/@radix-ui/react-icons/-/react-icons-1.3.0.tgz}
     id: registry.npmjs.org/@radix-ui/react-icons/1.3.0
@@ -5327,6 +5350,23 @@ packages:
     peerDependencies:
       react: ^16.x || ^17.x || ^18.x
     dependencies:
+      react: registry.npmjs.org/react@18.3.1
+    dev: false
+
+  registry.npmjs.org/@radix-ui/react-slot@1.1.0(@types/react@18.3.2)(react@18.3.1):
+    resolution: {integrity: sha512-FUCf5XMfmW4dtYl69pdS4DbxKy8nj4M7SafBgPllysxmdachynNflAdp/gCsnYWNDnge6tI9onzMp5ARYc1KNw==, tarball: https://registry.npmjs.org/@radix-ui/react-slot/-/react-slot-1.1.0.tgz}
+    id: registry.npmjs.org/@radix-ui/react-slot/1.1.0
+    name: '@radix-ui/react-slot'
+    version: 1.1.0
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@radix-ui/react-compose-refs': registry.npmjs.org/@radix-ui/react-compose-refs@1.1.0(@types/react@18.3.2)(react@18.3.1)
+      '@types/react': registry.npmjs.org/@types/react@18.3.2
       react: registry.npmjs.org/react@18.3.1
     dev: false
 
@@ -6030,7 +6070,6 @@ packages:
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==, tarball: https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.12.tgz}
     name: '@types/prop-types'
     version: 15.7.12
-    dev: true
 
   registry.npmjs.org/@types/qs@6.9.15:
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==, tarball: https://registry.npmjs.org/@types/qs/-/qs-6.9.15.tgz}
@@ -6059,7 +6098,6 @@ packages:
     dependencies:
       '@types/prop-types': registry.npmjs.org/@types/prop-types@15.7.12
       csstype: registry.npmjs.org/csstype@3.1.3
-    dev: true
 
   registry.npmjs.org/@types/semver@7.5.8:
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==, tarball: https://registry.npmjs.org/@types/semver/-/semver-7.5.8.tgz}
@@ -6453,7 +6491,7 @@ packages:
     engines: {node: '>=14.15.0'}
     dependencies:
       js-yaml: registry.npmjs.org/js-yaml@3.14.1
-      tslib: 2.6.2
+      tslib: registry.npmjs.org/tslib@2.6.2
     dev: true
 
   registry.npmjs.org/@zkochan/js-yaml@0.0.7:
@@ -7979,7 +8017,7 @@ packages:
         optional: true
     dependencies:
       import-fresh: 3.3.0
-      js-yaml: 4.1.0
+      js-yaml: registry.npmjs.org/js-yaml@4.1.0
       parse-json: registry.npmjs.org/parse-json@5.2.0
       path-type: registry.npmjs.org/path-type@4.0.0
       typescript: 5.3.3
@@ -7998,7 +8036,7 @@ packages:
         optional: true
     dependencies:
       import-fresh: 3.3.0
-      js-yaml: 4.1.0
+      js-yaml: registry.npmjs.org/js-yaml@4.1.0
       parse-json: registry.npmjs.org/parse-json@5.2.0
       path-type: registry.npmjs.org/path-type@4.0.0
       typescript: 5.4.5
@@ -8091,7 +8129,6 @@ packages:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==, tarball: https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz}
     name: csstype
     version: 3.1.3
-    dev: true
 
   registry.npmjs.org/damerau-levenshtein@1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==, tarball: https://registry.npmjs.org/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz}
@@ -9585,6 +9622,28 @@ packages:
     dependencies:
       map-cache: registry.npmjs.org/map-cache@0.2.2
     dev: true
+
+  registry.npmjs.org/framer-motion@11.2.13(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-AyIeegfkXlkX1lWEudRYsJlC+0A59cE8oFK9IsN9bUQzxLwcvN3AEaYaznkELiWlHC7a0eD7pxsYQo7BC05S5A==, tarball: https://registry.npmjs.org/framer-motion/-/framer-motion-11.2.13.tgz}
+    id: registry.npmjs.org/framer-motion/11.2.13
+    name: framer-motion
+    version: 11.2.13
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: registry.npmjs.org/react@18.3.1
+      react-dom: registry.npmjs.org/react-dom@18.3.1(react@18.3.1)
+      tslib: registry.npmjs.org/tslib@2.6.2
+    dev: false
 
   registry.npmjs.org/fresh@0.5.2:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==, tarball: https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz}
