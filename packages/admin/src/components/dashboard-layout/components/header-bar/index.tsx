@@ -12,7 +12,7 @@ const HeaderBar = () => {
 
   return (
     <>
-      <Header className="flex items-center justify-end bg-[#fff] p-0">
+      <Header className="flex items-center justify-end bg-background p-0">
         <LocaleDropdown />
         <SettingDrawer />
       </Header>

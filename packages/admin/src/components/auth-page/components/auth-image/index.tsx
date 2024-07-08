@@ -9,7 +9,7 @@ const AuthImage: React.FC<AuthImageProps> = ({ type }) => {
   return (
     <div
       className={clsx(
-        'bg-color_overlay hidden flex-col items-center justify-center gap-[80px] bg-image_overlay bg-cover bg-center bg-no-repeat',
+        'hidden flex-col items-center justify-center gap-[80px] bg-background bg-cover bg-center bg-no-repeat',
         'mlg:flex'
       )}
     >

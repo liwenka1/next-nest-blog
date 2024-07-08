@@ -54,10 +54,6 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
       },
-      backgroundImage: {
-        image_overlay:
-          'linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url("@/assets/auth/overlay.jpg")'
-      },
       boxShadow: {
         light: '-8px 8px 20px -4px rgba(145, 158, 171, 0.12)'
       },
