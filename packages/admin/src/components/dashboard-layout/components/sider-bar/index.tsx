@@ -6,6 +6,7 @@ import clsx from 'clsx'
 
 import { IconButton, SvgIcon } from '@/components/ui'
 import { useSettingStore } from '@/stores'
+import { themePresetsColors } from '@/config/theme'
 
 const { Sider } = Layout
 
@@ -40,11 +41,11 @@ const SiderBar = () => {
     navigate(key)
   }
 
-  const { collapsed, setSetting } = useSettingStore()
+  const { collapsed, themePresets, setSetting } = useSettingStore()
 
   return (
     <Sider
-      className={clsx('hidden border-r', 'lxl:block')}
+      className={clsx('hidden border-r border-border', 'lxl:block')}
       width={300}
       trigger={null}
       collapsible
@@ -52,10 +53,10 @@ const SiderBar = () => {
       theme="light"
     >
       <div className="flex h-[68px] items-center pb-[8px] pl-[28px] pt-[20px]">
-        <SvgIcon name="ic-logo" size={40} />
+        <SvgIcon name="ic-logo" size={40} color={themePresetsColors[themePresets]} />
       </div>
       <IconButton
-        className="absolute right-0 top-[24px] translate-x-1/2 border"
+        className="absolute right-0 top-[24px] z-10 translate-x-1/2 border bg-background"
         onClick={() => setSetting('collapsed', !collapsed)}
       >
         {collapsed ? <RightOutlined /> : <LeftOutlined />}

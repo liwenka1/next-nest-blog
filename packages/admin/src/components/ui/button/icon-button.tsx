@@ -8,7 +8,7 @@ interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
 const IconButton: React.FC<IconButtonProps> = ({ children, className, ...props }) => {
   return (
     <button
-      className={clsx('flex cursor-pointer items-center justify-center rounded-full p-2 hover:bg-gray-200', className)}
+      className={clsx('flex cursor-pointer items-center justify-center rounded-full p-2 hover:bg-accent', className)}
       {...props}
     >
       {children}

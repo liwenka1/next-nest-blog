@@ -9,7 +9,7 @@ const ModeButton: React.FC<ModeButtonProps> = ({ children, className, ...props }
   return (
     <button
       className={clsx(
-        'flex cursor-pointer flex-col items-center justify-center rounded-[16px] border border-solid bg-transparent px-[16px] py-[20px] hover:bg-gray-100',
+        'flex cursor-pointer flex-col items-center justify-center rounded-[16px] border border-solid bg-transparent px-[16px] py-[20px] hover:bg-accent',
         className
       )}
       {...props}
