@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 import { ThemeContrast, ThemeMode, ThemeNavColor, ThemeNavLatout, ThemePresets } from '#/enum'
 
@@ -25,8 +26,15 @@ const defaultSetting = {
   collapsed: false
 }
 
-export const useSettingStore = create<SettingStore>()((set) => ({
-  ...defaultSetting,
-  setSetting: (key, value) => set({ [key]: value }),
-  resetSetting: () => set(defaultSetting)
-}))
+export const useSettingStore = create<SettingStore>()(
+  persist(
+    (set) => ({
+      ...defaultSetting,
+      setSetting: (key, value) => set({ [key]: value }),
+      resetSetting: () => set(defaultSetting)
+    }),
+    {
+      name: 'setting'
+    }
+  )
+)

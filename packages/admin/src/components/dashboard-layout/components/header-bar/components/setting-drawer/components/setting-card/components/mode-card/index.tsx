@@ -26,7 +26,7 @@ const ModeCard = () => {
       <ModeButton>
         <div className="mb-[24px] flex w-full items-center justify-between">
           <SvgIcon name="ic-moon" size={24} />
-          <Switch size="small" onChange={onChange} />
+          <Switch size="small" value={themeMode === ThemeMode.Dark} onChange={onChange} />
         </div>
         <div className="w-full text-left">
           <span className="text-sm font-[600]">Dark mode</span>
