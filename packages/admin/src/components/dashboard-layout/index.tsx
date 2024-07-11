@@ -15,7 +15,7 @@ const DashboardLayout = () => {
     <Layout className="h-full">
       {themeNavLatout === ThemeNavLatout.Inline && <SiderBar />}
       <Layout className="flex h-full w-full flex-col" style={{ flexDirection: 'column' }}>
-        <HeaderBar />
+        <HeaderBar type="DASHBOARD" />
         <Content className="h-full w-full p-[16px]">
           <Outlet />
         </Content>

@@ -8,7 +8,7 @@ interface AuthPageProps {
 const AuthPage: React.FC<AuthPageProps> = ({ type }) => {
   return (
     <div className="flex h-full w-full flex-col">
-      <HeaderBar />
+      <HeaderBar type="AUTH" />
       <div className="flex flex-1">
         <AuthImage type={type} />
         <AuthForm type={type} />

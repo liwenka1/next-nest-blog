@@ -30,6 +30,11 @@ const App = () => {
             colorPrimary: themePresetsColors[themePresets],
             fontFamily: 'Public Sans'
           },
+          components: {
+            Layout: {
+              headerHeight: 72
+            }
+          },
           algorithm
         }}
       >
