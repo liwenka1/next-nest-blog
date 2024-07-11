@@ -1,3 +1,4 @@
+import { HeaderBar } from '../dashboard-layout/components'
 import { AuthForm, AuthImage } from './components'
 
 interface AuthPageProps {
@@ -6,9 +7,12 @@ interface AuthPageProps {
 
 const AuthPage: React.FC<AuthPageProps> = ({ type }) => {
   return (
-    <div className="flex h-full w-full">
-      <AuthImage type={type} />
-      <AuthForm type={type} />
+    <div className="flex h-full w-full flex-col">
+      <HeaderBar />
+      <div className="flex flex-1">
+        <AuthImage type={type} />
+        <AuthForm type={type} />
+      </div>
     </div>
   )
 }
