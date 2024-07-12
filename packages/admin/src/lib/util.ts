@@ -14,3 +14,10 @@ export const rgbToRgba = (rgb: string, alpha: string) => {
   // 返回 RGBA 颜色值
   return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
+
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}

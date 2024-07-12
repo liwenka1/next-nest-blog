@@ -1,4 +1,4 @@
-import { httpClient } from '@/utils/request'
+import { httpClient } from '@/lib/request'
 import { UserData } from './type'
 
 export const userApi = {
