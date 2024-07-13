@@ -1,25 +1,26 @@
 import i18n from 'i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 import zh from './zh'
 import en from './en'
 
-export const useI18n = () => {
-  i18n.use(initReactI18next).init({
+import { LocalEnum } from '#/enum'
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
     resources: {
       ...en,
       ...zh
     },
-    lng: 'en',
-    fallbackLng: 'en',
+    lng: LocalEnum.en_US,
+    fallbackLng: LocalEnum.en_US,
 
     interpolation: {
       escapeValue: false
     }
   })
 
-  const changeLanguage = (lng: 'zh' | 'en') => {
-    i18n.changeLanguage(lng)
-  }
-
-  return changeLanguage
-}
+export default i18n
+export const { t } = i18n

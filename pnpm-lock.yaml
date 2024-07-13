@@ -35,6 +35,9 @@ importers:
       i18next:
         specifier: ^23.11.5
         version: registry.npmjs.org/i18next@23.11.5
+      i18next-browser-languagedetector:
+        specifier: ^8.0.0
+        version: registry.npmjs.org/i18next-browser-languagedetector@8.0.0
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
@@ -2995,7 +2998,7 @@ packages:
     peerDependencies:
       typescript: '>=4.2.0'
     dependencies:
-      typescript: registry.npmjs.org/typescript@5.4.5
+      typescript: 5.4.5
     dev: true
 
   /ts-interface-checker@0.1.13:
@@ -8869,7 +8872,7 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      eslint: registry.npmjs.org/eslint@8.57.0
+      eslint: 8.57.0
     dev: true
 
   registry.npmjs.org/eslint-import-resolver-node@0.3.9:
@@ -10349,6 +10352,14 @@ packages:
     dependencies:
       ms: registry.npmjs.org/ms@2.1.3
     dev: true
+
+  registry.npmjs.org/i18next-browser-languagedetector@8.0.0:
+    resolution: {integrity: sha512-zhXdJXTTCoG39QsrOCiOabnWj2jecouOqbchu3EfhtSHxIB5Uugnm9JaizenOy39h7ne3+fLikIjeW88+rgszw==, tarball: https://registry.npmjs.org/i18next-browser-languagedetector/-/i18next-browser-languagedetector-8.0.0.tgz}
+    name: i18next-browser-languagedetector
+    version: 8.0.0
+    dependencies:
+      '@babel/runtime': registry.npmjs.org/@babel/runtime@7.24.5
+    dev: false
 
   registry.npmjs.org/i18next@23.11.5:
     resolution: {integrity: sha512-41pvpVbW9rhZPk5xjCX2TPJi2861LEig/YRhUkY+1FQ2IQPS0bKUDYnEqY8XPPbB48h1uIwLnP9iiEfuSl20CA==, tarball: https://registry.npmjs.org/i18next/-/i18next-23.11.5.tgz}

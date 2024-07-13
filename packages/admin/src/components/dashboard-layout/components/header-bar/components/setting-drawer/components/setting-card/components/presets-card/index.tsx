@@ -1,7 +1,7 @@
 import { Button } from 'antd'
 
 import { SvgIcon } from '@/components/ui'
-import { rgbToRgba } from '@/utils/util'
+import { rgbToRgba } from '@/lib/utils'
 import { themePresetsColors } from '@/config/theme'
 import { useSettingStore } from '@/stores/use-setting-store'
 

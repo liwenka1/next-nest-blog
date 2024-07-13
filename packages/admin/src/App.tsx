@@ -1,30 +1,30 @@
 import { RouterProvider } from 'react-router-dom'
 import { ConfigProvider, theme } from 'antd'
 import dayjs from 'dayjs'
-import zhCN from 'antd/locale/zh_CN'
 import 'dayjs/locale/zh-cn'
 import 'antd/dist/reset.css'
 
-import { useSettingStore } from '@/stores'
+import { useSettingStore } from './stores'
 import router from './router'
-import { useI18n } from './locales'
 import { ThemeProvider } from './components'
 import { themePresetsColors } from './config/theme'
 
 import { ThemeMode } from '#/enum'
+import { useLocale } from './hooks/use-locale'
 
 dayjs.locale('zh-cn')
 
 const App = () => {
   const { themePresets, themeMode } = useSettingStore()
+
   const algorithm = themeMode === ThemeMode.Light ? theme.defaultAlgorithm : theme.darkAlgorithm
 
-  useI18n()
+  const { language } = useLocale()
 
   return (
     <ThemeProvider>
       <ConfigProvider
-        locale={zhCN}
+        locale={language.antdLocal}
         theme={{
           token: {
             colorPrimary: themePresetsColors[themePresets],
