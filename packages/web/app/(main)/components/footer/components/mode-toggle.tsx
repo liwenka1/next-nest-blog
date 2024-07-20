@@ -1,18 +1,25 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import clsx from 'clsx'
+import { useTheme } from 'next-themes'
+import { useThemeModeStore } from '@/stores/use-theme-mode'
 
 interface ModeToggleProps {
   options: {
-    mode: string
+    mode: 'light' | 'system' | 'dark'
     icon: React.ReactNode
   }[]
 }
 
 const ModeToggle: React.FC<ModeToggleProps> = ({ options }) => {
-  const [selectedOption, setSelectedOption] = useState(options[0].mode)
+  const { setTheme } = useTheme()
+  const { themeMode, setThemeMode } = useThemeModeStore()
+
+  useEffect(() => {
+    setTheme(themeMode)
+  }, [themeMode, setTheme])
 
   return (
     <div className="flex rounded-full bg-gray-200 p-1">
@@ -21,13 +28,13 @@ const ModeToggle: React.FC<ModeToggleProps> = ({ options }) => {
           <button
             className={clsx(
               'px-4 py-2 text-sm font-medium transition-colors duration-200',
-              selectedOption === mode ? 'text-white' : 'text-gray-700'
+              themeMode === mode ? 'text-white' : 'text-gray-700'
             )}
-            onClick={() => setSelectedOption(mode)}
+            onClick={() => setThemeMode(mode)}
           >
             {icon}
           </button>
-          {selectedOption === mode && (
+          {themeMode === mode && (
             <motion.div
               className="absolute inset-0 z-10 rounded-full bg-blue-500"
               layoutId="highlight"
