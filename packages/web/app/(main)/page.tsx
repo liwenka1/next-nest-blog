@@ -1,12 +1,11 @@
-import { Footer, Header, Main } from './components'
+import { Button } from '@/components/ui/button'
 
 const Home = () => {
   return (
-    <div className="flex h-full flex-col">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <>
+      Main
+      <Button>Main</Button>
+    </>
   )
 }
 

@@ -4,6 +4,7 @@ import clsx from 'clsx'
 
 import '@/styles/globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import { LayoutWrapper } from '@/layout'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, 'flex flex-col h-full')}>
+      <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+          <LayoutWrapper>{children}</LayoutWrapper>
         </ThemeProvider>
       </body>
     </html>
