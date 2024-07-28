@@ -9,9 +9,9 @@ import { RiPantoneLine, RiArchiveLine, RiGhostLine } from 'react-icons/ri'
 const NavBar = () => {
   const pathName = usePathname()
   const navList = [
-    { title: '首页', link: '/', icon: <RiPantoneLine /> },
-    { title: '博客', link: '/posts', icon: <RiArchiveLine /> },
-    { title: '关于', link: '/about', icon: <RiGhostLine /> }
+    { title: '首页', href: '/', icon: <RiPantoneLine /> },
+    { title: '博客', href: '/posts', icon: <RiArchiveLine /> },
+    { title: '关于', href: '/about', icon: <RiGhostLine /> }
   ]
 
   return (
@@ -26,11 +26,11 @@ const NavBar = () => {
       ></motion.div>
       <div className="flex px-4 font-medium text-zinc-800 dark:text-zinc-200">
         {navList.map((item) => (
-          <Link href={item.link} key={item.title}>
+          <Link href={item.href} key={item.title}>
             <motion.div
               className={clsx(
                 'relative block whitespace-nowrap px-4 py-2 transition-[padding] duration-200 hover:text-accent/80',
-                pathName === item.link ? 'text-accent' : 'hover:text-accent/80'
+                pathName === item.href ? 'text-accent' : 'hover:text-accent/80'
               )}
               whileHover={{ scale: 1.05 }}
             >
