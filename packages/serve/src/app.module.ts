@@ -8,9 +8,11 @@ import { PostModule } from './post/post.module'
 import { TransformInterceptor } from './config/transform.interceptor'
 import { ErrorsInterceptor } from './config/errors.interceptor'
 import { PrismaService } from './prisma/prisma.service'
+import { AuthModule } from './auth/auth.module'
+import { UsersModule } from './users/users.module'
 
 @Module({
-  imports: [UserModule, PostModule],
+  imports: [UserModule, PostModule, AuthModule, UsersModule],
   controllers: [AppController],
   providers: [
     {
