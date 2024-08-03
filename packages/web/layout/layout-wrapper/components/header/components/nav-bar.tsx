@@ -16,14 +16,6 @@ const NavBar = () => {
 
   return (
     <nav className="group pointer-events-auto relative rounded-full bg-gradient-to-b from-zinc-50/70 to-white/90 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-md duration-200 dark:from-zinc-900/70 dark:to-zinc-800/90 dark:ring-zinc-100/10">
-      <motion.div
-        className="pointer-events-none absolute -inset-px rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        aria-hidden="true"
-        style={{
-          background:
-            'radial-gradient(154.63505424062166px circle at 7.5px 291px, var(--spotlight-color) 0%, transparent 65%)'
-        }}
-      ></motion.div>
       <div className="flex px-4 font-medium text-zinc-800 dark:text-zinc-200">
         {navList.map((item) => (
           <Link href={item.href} key={item.title}>
